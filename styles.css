@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* ========== FOOTER STYLES ========== */
+footer{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+}
+
+.footer-logo {
+    margin-left: 50px;
+}
+
+footer img{
+    width: 120px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+footer ul{
+    margin-right: 50px;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+footer ul a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+footer ul a:hover {
+    color: #ccc;
+}
+
+/* ========== PRODUCT PAGE STYLES ========== */
+.ProductPage{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 120px);
+}
+
+.ProductImgs{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ProductImgs img{
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+}
+
+.ProductDesc{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+}
+
+.ProductDesc h1 {
+    font-size: 1.125rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.ProductDesc p {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* ========== PRICE STYLES ========== */
+.price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.currentAmount, .previousAmount{
+    font-family: "GFS Didot", serif;
+    font-weight: 400;
+    font-style: bold;
+    display: inline-block;
+}
+
+.previousAmount{
+    color: #999;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.currentAmount{
+    color: black;
+    background-color: #f4e623;
+    padding: 3px 8px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+/* ========== HR STYLE ========== */
+.ProductDesc hr {
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* ========== BUTTON STYLES ========== */
+.ProductDesc button{
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ProductDesc button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .ProductPage {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .ProductImgs,
+    .ProductDesc {
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    .ProductImgs img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .ProductDesc {
+        padding: 0 20px;
+    }
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+    
+    .footer-logo {
+        margin-left: 0;
+    }
+    
+    footer ul {
+        margin-right: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    footer img {
+        width: 100px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    footer ul {
+        gap: 10px;
+    }
+    
+    footer ul a {
+        font-size: 0.8rem;
+    }
+    
+    .ProductDesc h1 {
+        font-size: 1rem;
+    }
+    
+    .currentAmount {
+        font-size: 1rem;
+    }
+    
+    .previousAmount {
+        font-size: 0.9rem;
+    }
+}
