@@ -6,7 +6,7 @@
 
 body {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: black;
 }
 
 /* ========== FOOTER STYLES ========== */
@@ -102,7 +102,6 @@ footer ul a:hover {
 }
 
 .currentAmount, .previousAmount{
-    font-family: "GFS Didot", serif;
     font-weight: 400;
     font-style: bold;
     display: inline-block;
@@ -154,8 +153,143 @@ footer ul a:hover {
     border-color: white;
 }
 
+
+
+.ProductImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+    justify-items: center; /* Centers images within their grid cells */
+    padding: 0;
+    margin: 0;
+    max-width: 1000px;
+}
+
+.ProductImages img {
+    width: 90%; /* This will make images 90% of their grid cell */
+    height: auto;
+    display: block;
+}
+
+/* ========== FEATURING SECTION ========== */
+.Featuring {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: auto; /* Changed from calc(100vh - 120px) to auto */
+    margin-top: 40px;
+}
+
+.Featuring h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.featuredProducts {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Changed from 6 to 3 columns */
+    gap: 30px; /* Added gap between grid items */
+    max-width: 1200px; /* Added max-width to prevent stretching */
+    width: 100%;
+    padding: 0 20px;
+}
+
+.featuredProducts img {
+    width: 100%; /* Changed from 50% to 100% */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 3/4; /* Added for consistent image proportions */
+}
+
+.product {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product .title {
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.product .price {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+    .featuredProducts {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Featuring {
+        padding: 30px 15px;
+    }
+    
+    .featuredProducts {
+        grid-template-columns: repeat(3, 1fr); /* Keep 2 columns on mobile */
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .Featuring h4 {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .featuredProducts {
+        grid-template-columns: repeat(3, 1fr); /* Keep 2 columns on mobile *//* 1 column on very small screens */
+        gap: 25px;
+        max-width: 480px;
+    }
+    
+    .Featuring h4 {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .product .title {
+        font-size: 0.85rem;
+    }
+    
+    .product .price {
+        font-size: 0.9rem;
+    }
+}
+
 /* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 768px) {
+     .ProductImages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Use gap instead of row-gap for flexbox */
+        padding: 20px; /* Reduce padding on mobile */
+    }
+    
+    .ProductImages img {
+        width: 100%; /* Make images slightly larger on mobile */
+        max-width: 500px; /* Prevent images from getting too large */
+    }
+
     .ProductPage {
         flex-direction: column;
         padding: 20px;
@@ -168,7 +302,7 @@ footer ul a:hover {
     }
     
     .ProductImgs img {
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
     }
     
@@ -219,5 +353,283 @@ footer ul a:hover {
     
     .previousAmount {
         font-size: 0.9rem;
+    }
+}
+
+/* ========== NEWSLETTER SECTION ========== */
+.newsletter-section {
+    background-color: #111;
+    padding: 60px 20px;
+    margin: 40px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter-container h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.newsletter-container > p {
+    color: #ddd;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.newsletter-form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #333;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #f4e623;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group button {
+    padding: 15px 30px;
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.form-group button:hover {
+    background-color: #f4e623;
+    border-color: #f4e623;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: #f4e623;
+}
+
+.checkbox-group label {
+    color: #ddd;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.checkbox-group a {
+    color: #f4e623;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.checkbox-group a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.newsletter-note {
+    color: #999;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* ========== RESPONSIVE DESIGN FOR NEWSLETTER ========== */
+@media (max-width: 768px) {
+    .newsletter-section {
+        padding: 40px;
+        margin: 30px 0;
+    }
+    
+    .newsletter-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    .form-group input,
+    .form-group button {
+        width: 100%;
+    }
+    
+    .form-group button {
+        padding: 15px;
+    }
+    
+    .checkbox-group {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-section {
+        padding: 40px;
+    }
+    
+    .newsletter-container h3 {
+        font-size: 1.3rem;
+    }
+    
+    .newsletter-container > p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ========== BOTTOM FOOTER STYLES ========== */
+.site-footer {
+    background-color: #111;
+    color: white;
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left p {
+    color: #ddd;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f4e623;
+}
+
+.footer-right {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f4e623;
+}
+
+.made-with {
+    color: #999;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.made-with .fa-heart {
+    color: #ff4757;
+    font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE FOOTER ========== */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 25px 15px;
+        margin-top: 40px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-right {
+        margin-left: 0px;
+        align-items: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 20px 10px;
+    }
+    
+    .footer-links {
+        gap: 10px;
+    }
+    
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+    
+    .social-icons a {
+        font-size: 1rem;
     }
 }
